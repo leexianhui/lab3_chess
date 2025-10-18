@@ -3,12 +3,19 @@
 
 #include "Chess.h"
 
-    namespace Student
+namespace Student
 {
   class ChessBoard;
 
   class ChessPiece
   {
+  protected:
+    ChessBoard* board;
+    Color color;
+    Type type;
+    int row;
+    int column;
+
   public:
     /**
      * @brief
