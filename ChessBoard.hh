@@ -36,6 +36,10 @@ namespace Student
          */
         ChessBoard(int numRow, int numCol);
 
+        ~ChessBoard();
+        ChessBoard(const ChessBoard&) = delete;
+        ChessBoard& operator=(const ChessBoard&) = delete;
+
         /**
          * @return
          * Number of rows in chess board.

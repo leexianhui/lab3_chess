@@ -21,6 +21,15 @@ ChessBoard::ChessBoard(int numRow, int numCol)
     board = std::vector<std::vector<ChessPiece *>>(numRows, std::vector<ChessPiece *>(numCols, nullptr));
 }
 
+ChessBoard::~ChessBoard() {
+    for (auto& rowVec : board) {
+        for (ChessPiece*& p : rowVec) {
+            delete p;
+            p = nullptr;
+        }
+    }
+}
+
 void ChessBoard::createChessPiece(Color col, Type ty, int startRow, int startColumn)
 {
     // clean up existing piece if any
