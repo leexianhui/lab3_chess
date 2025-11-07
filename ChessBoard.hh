@@ -23,6 +23,10 @@ namespace Student
          * *(board.at(row).at(col)) returns the ChessPiece object itself.
          */
         std::vector<std::vector<ChessPiece *>> board;
+        bool isPseudoValidMove(int fromRow, int fromColumn, int toRow, int toColumn);
+        bool isSquareUnderAttack(int row, int column, Color byColor);
+        bool wouldLeaveKingInCheck(int fromRow, int fromColumn, int toRow, int toColumn);
+        std::pair<int,int> findKing(Color c);
 
     public:
         /**
